@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const path = require('path');
 const { logError } = require('./logger');
 const multer = require('multer');
+const { query, getOne, run } = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -59,49 +60,8 @@ const upload = multer({
     }
 });
 
-// Database Setup
-const dbPath = path.resolve(__dirname, 'database.sqlite');
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Error opening database', err.message);
-    } else {
-        console.log('Connected to the SQLite database.');
-        createTables();
-    }
-});
-
-function createTables() {
-    // Tables are created via seed.js for simplicity, but we can ensure they exist here too
-    // Keeping simple to avoid duplication logic complexity here
-}
-
-// Helper for query execution (Promisify-ish)
-const run = (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-        db.run(sql, params, function (err) {
-            if (err) reject(err);
-            else resolve(this);
-        });
-    });
-};
-
-const query = (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-        db.all(sql, params, (err, rows) => {
-            if (err) reject(err);
-            else resolve(rows);
-        });
-    });
-};
-
-const getOne = (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-        db.get(sql, params, (err, row) => {
-            if (err) reject(err);
-            else resolve(row);
-        });
-    });
-};
+// Database connection is handled in db.js
+console.log('PostgreSQL connection configured.');
 
 // --- ROUTES ---
 
