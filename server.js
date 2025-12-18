@@ -6,7 +6,12 @@ const { logError } = require('./logger');
 const multer = require('multer');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+
+// Health check for Render
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'UP', timestamp: new Date().toISOString() });
+});
 
 // Middleware
 app.use(cors());
