@@ -1,0 +1,781 @@
+[2025-12-17T01:34:05.823Z] [VERIFICATION] Error: Test verification error
+    at Object.<anonymous> (D:\ngo\backend\verify_logger.js:5:19)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+----------------------------------------
+[2025-12-17T07:12:14.105Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:14.216Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:15.043Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:15.351Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:15.532Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:15.784Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:16.337Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:16.689Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.278Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.324Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.387Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.427Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.504Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.567Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.585Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.635Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.916Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:19.981Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:20.056Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:20.282Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:21.446Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:21.511Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:21.612Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:21.650Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.322Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.413Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.475Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.542Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.822Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.943Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:22.984Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:23.129Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:23.635Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:23.973Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:49.992Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:12:50.027Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:14:01.659Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:14:01.726Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:17:26.303Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:17:26.345Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:24:09.399Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:24:09.435Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:25:03.354Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:25:03.374Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:25:51.896Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:25:51.961Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:27:14.170Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:27:14.194Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:28:02.205Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:28:02.240Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:12.491Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:12.561Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:22.437Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:22.474Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:33.096Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:29:33.128Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:30:35.328Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:30:35.370Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:31:32.301Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:31:32.344Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:31:57.392Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T07:31:57.568Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at D:\ngo\backend\server.js:56:12
+    at new Promise (<anonymous>)
+    at query (D:\ngo\backend\server.js:55:12)
+    at D:\ngo\backend\server.js:430:32
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\ngo\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\ngo\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\ngo\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\ngo\backend\node_modules\router\lib\layer.js:152:17)
+----------------------------------------
+[2025-12-17T08:14:03.846Z] Error: SQLITE_ERROR: no such column: date
+--> in Database#all('SELECT * FROM messages ORDER BY date DESC', [], [Function (anonymous)])
+    at /home/steve/ngo/ngo/ngo/backend/server.js:74:12
+    at new Promise (<anonymous>)
+    at query (/home/steve/ngo/ngo/ngo/backend/server.js:73:12)
+    at /home/steve/ngo/ngo/ngo/backend/server.js:448:32
+    at Layer.handleRequest (/home/steve/ngo/ngo/ngo/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/steve/ngo/ngo/ngo/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/steve/ngo/ngo/ngo/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/steve/ngo/ngo/ngo/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/steve/ngo/ngo/ngo/backend/node_modules/router/lib/layer.js:152:17)
+----------------------------------------
+[2025-12-17T18:59:01.762Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765997941740-170277829.png'
+----------------------------------------
+[2025-12-17T18:59:09.973Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765997949968-144551127.png'
+----------------------------------------
+[2025-12-17T19:02:18.546Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765998138520-56973305.png'
+----------------------------------------
+[2025-12-17T19:02:24.874Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765998144867-489832953.png'
+----------------------------------------
+[2025-12-17T19:03:53.738Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765998233733-132846632.png'
+----------------------------------------
+[2025-12-17T19:07:06.973Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765998426970-247181103.png'
+----------------------------------------
+[2025-12-17T19:07:41.146Z] Error: ENOENT: no such file or directory, open 'uploads/image-1765998461142-462046792.png'
+----------------------------------------

@@ -1,0 +1,100 @@
+Server running on http://localhost:3001
+Connected to the SQLite database.
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Adding: session=session_1765960730662, product=p2
+[WISHLIST] Found existing: id=19
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Adding: session=session_1765960730662, product=p2
+[WISHLIST] Found existing: id=19
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Adding: session=session_1765960730662, product=p1
+[WISHLIST] Inserted new: id=21
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=session_1765960730662, product=p1
+[WISHLIST] Found existing: id=21
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=session_1765960730662, product=p1
+[WISHLIST] Found existing: id=21
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Adding: session=session_1765960730662, product=p4
+[WISHLIST] Found existing: id=14
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=session_1765962534916, product=p1
+[WISHLIST] Inserted new: id=22
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=session_1765962534916, product=p1
+[WISHLIST] Found existing: id=22
+[WISHLIST] Adding: session=session_1765962460564, product=p2
+[WISHLIST] Inserted new: id=23
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Adding: session=session_1765962460564, product=p2
+[WISHLIST] Found existing: id=23
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p1
+[WISHLIST] Inserted new: id=24
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p1
+[WISHLIST] Found existing: id=24
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p1
+[WISHLIST] Found existing: id=24
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p2
+[WISHLIST] Inserted new: id=25
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p1
+[WISHLIST] Found existing: id=24
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p1
+[WISHLIST] Found existing: id=24
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
+[WISHLIST] Adding: session=51873155-7203-45be-ae1c-bef7b8ba6474, product=p4
+[WISHLIST] Inserted new: id=26
+[WISHLIST] Deleting id=p4
+[WISHLIST] Deleted id=p4
+[WISHLIST] Deleting id=p2
+[WISHLIST] Deleted id=p2
+[WISHLIST] Deleting id=p1
+[WISHLIST] Deleted id=p1
