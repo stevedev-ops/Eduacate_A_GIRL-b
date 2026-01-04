@@ -67,12 +67,12 @@ app.get('/api/products/:id', async (req, res) => {
 
 app.post('/api/products', async (req, res) => {
     try {
-        let { id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images } = req.body;
+        let { id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock } = req.body;
         if (!id) {
             id = `p-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
         }
-        const query = `INSERT INTO products (id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *`;
-        const values = [id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images)];
+        const query = `INSERT INTO products (id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING *`;
+        const values = [id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images), stock || 0];
         const { rows } = await pool.query(query, values);
         res.status(201).json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
@@ -81,10 +81,10 @@ app.post('/api/products', async (req, res) => {
 app.put('/api/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images } = req.body;
+        const { name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock } = req.body;
         // Simplified update for brevity, ideally construct query dynamically
-        const query = `UPDATE products SET name=$1, price=$2, category=$3, rating=$4, reviews=$5, description=$6, material=$7, dimensions=$8, origin=$9, impact=$10, details=$11, story=$12, images=$13 WHERE id=$14 RETURNING *`;
-        const values = [name, price, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images), id];
+        const query = `UPDATE products SET name=$1, price=$2, category=$3, rating=$4, reviews=$5, description=$6, material=$7, dimensions=$8, origin=$9, impact=$10, details=$11, story=$12, images=$13, stock=$14 WHERE id=$15 RETURNING *`;
+        const values = [name, price, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images), stock || 0, id];
         const { rows } = await pool.query(query, values);
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
@@ -338,6 +338,45 @@ app.get('/api/orders/:id', async (req, res) => {
         if (rows.length === 0) return res.status(404).json({ error: 'Order not found' });
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+
+// --- WISHLIST ---
+app.get('/api/wishlist/:session_id', async (req, res) => {
+    try {
+        const { session_id } = req.params;
+        const query = `
+            SELECT w.id, w.product_id, p.name, p.price, p.description, p.images, p.stock, p.category
+            FROM wishlist w
+            JOIN products p ON w.product_id = p.id
+            WHERE w.session_id = $1
+        `;
+        const { rows } = await pool.query(query, [session_id]);
+        res.json({ message: 'success', data: rows });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.post('/api/wishlist', async (req, res) => {
+    try {
+        const { session_id, product_id } = req.body;
+        const query = 'INSERT INTO wishlist (session_id, product_id) VALUES ($1, $2) ON CONFLICT (session_id, product_id) DO NOTHING RETURNING *';
+        const { rows } = await pool.query(query, [session_id, product_id]);
+        res.status(201).json({ message: 'success', data: rows[0] });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.delete('/api/wishlist/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        await pool.query('DELETE FROM wishlist WHERE id = $1', [id]);
+        res.json({ message: 'success' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 

@@ -12,7 +12,8 @@ CREATE TABLE IF NOT EXISTS products (
     impact VARCHAR(255),
     details JSONB,
     story JSONB,
-    images JSONB
+    images JSONB,
+    stock INTEGER DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS gallery (
@@ -83,4 +84,12 @@ CREATE TABLE IF NOT EXISTS orders (
     status VARCHAR(50) DEFAULT 'pending',
     customer_info JSONB,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS wishlist (
+    id SERIAL PRIMARY KEY,
+    session_id VARCHAR(255) NOT NULL,
+    product_id VARCHAR(50) NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(session_id, product_id)
 );
