@@ -24,6 +24,26 @@ app.use((req, res, next) => {
     next();
 });
 
+// Root route
+app.get('/', (req, res) => {
+    res.json({
+        message: 'EARG API Server',
+        status: 'running',
+        endpoints: {
+            products: '/api/products',
+            gallery: '/api/gallery',
+            stories: '/api/stories',
+            team: '/api/team',
+            journey: '/api/journey',
+            programs: '/api/programs',
+            messages: '/api/messages',
+            reviews: '/api/reviews',
+            settings: '/api/settings/:key',
+            upload: '/api/upload'
+        }
+    });
+});
+
 // --- PRODUCTS ---
 app.get('/api/products', async (req, res) => {
     try {
