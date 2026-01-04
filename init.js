@@ -53,23 +53,23 @@ const init = async () => {
         }
         console.log('✓ Programs seeded.');
 
-        // Insert settings
+        // Insert settings (use ON CONFLICT to handle duplicates gracefully)
         for (const [key, value] of Object.entries(settings)) {
-            await pool.query('INSERT INTO settings (key, value) VALUES ($1, $2)', [key, JSON.stringify(value)]);
+            await pool.query('INSERT INTO settings (key, value) VALUES ($1, $2) ON CONFLICT (key) DO NOTHING', [key, JSON.stringify(value)]);
         }
         console.log('✓ Settings seeded.');
 
         console.log('✓ Database initialization complete!');
+        isInitializing = 'complete';
     } catch (err) {
         console.error('❌ Error initializing database:', err);
+        isInitializing = false;
+        initPromise = null;
         throw err;
     }
-};
+})();
 
-// Run initialization and keep pool open for the server
-init().catch(err => {
-    console.error('Failed to initialize database:', err);
-    process.exit(1);
-});
+return initPromise;
+};
 
 export default init;
