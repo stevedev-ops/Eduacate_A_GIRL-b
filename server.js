@@ -44,11 +44,9 @@ app.post('/api/upload', (req, res) => {
         }
         if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
-        // Enforce q_auto,f_auto
-        let imageUrl = req.file.path;
-        if (imageUrl.includes('/upload/')) {
-            imageUrl = imageUrl.replace('/upload/', '/upload/q_auto,f_auto/');
-        }
+        // Store the ORIGINAL Cloudinary URL without transformations
+        // Transformations (q_auto, f_auto) will be applied in frontend via getImageUrl()
+        const imageUrl = req.file.path;
 
         res.json({ url: imageUrl });
     });
