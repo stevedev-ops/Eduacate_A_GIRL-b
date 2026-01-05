@@ -37,17 +37,23 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage });
 
-app.post('/api/upload', upload.single('image'), (req, res) => {
-    if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+app.post('/api/upload', (req, res) => {
+    upload.single('image')(req, res, (err) => {
+        if (err) {
+            console.error('Upload Error:', err);
+            return res.status(500).json({ error: err.message || 'File upload failed' });
+        }
+        if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
-    // Enforce q_auto,f_auto (Smart Optimization) in the URL
-    // Rule: "Always use q_auto,f_auto... Keep URL consistent"
-    let imageUrl = req.file.path;
-    if (imageUrl.includes('/upload/')) {
-        imageUrl = imageUrl.replace('/upload/', '/upload/q_auto,f_auto/');
-    }
+        // Enforce q_auto,f_auto (Smart Optimization) in the URL
+        // Rule: "Always use q_auto,f_auto... Keep URL consistent"
+        let imageUrl = req.file.path;
+        if (imageUrl.includes('/upload/')) {
+            imageUrl = imageUrl.replace('/upload/', '/upload/q_auto,f_auto/');
+        }
 
-    res.json({ url: imageUrl });
+        res.json({ url: imageUrl });
+    });
 });
 
 
