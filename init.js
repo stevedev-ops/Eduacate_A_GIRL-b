@@ -30,6 +30,14 @@ const init = async () => {
             await pool.query(schema);
             console.log('✓ Tables created or already exist.');
 
+            // Apply migrations for existing tables (in case of updates)
+            try {
+                await pool.query('ALTER TABLE products ADD COLUMN IF NOT EXISTS stock INTEGER DEFAULT 0');
+                console.log('✓ Applied migrations: Added stock column to products.');
+            } catch (err) {
+                console.log('Migration note: ' + err.message);
+            }
+
             // Check if data already exists
             const { rows } = await pool.query('SELECT COUNT(*) FROM products');
             const productCount = parseInt(rows[0].count);
