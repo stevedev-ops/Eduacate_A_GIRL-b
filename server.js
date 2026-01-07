@@ -80,11 +80,11 @@ app.get('/api/products/:id', async (req, res) => runQuerySingle(res, 'SELECT * F
 
 app.post('/api/products', async (req, res) => {
     try {
-        const { name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock, id } = req.body;
+        const { name, price, offerPrice, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock, id } = req.body;
         // Generate simple ID if not provided (though frontend usually relies on backend for ID generation, here we accept ID or gen one)
         const finalId = id || `prod_${Date.now()}`;
-        const query = `INSERT INTO products (id, name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING *`;
-        const values = [finalId, name, price, category, rating || 5, reviews || 0, description, material, dimensions, origin, impact, JSON.stringify(details || []), JSON.stringify(story || {}), JSON.stringify(images || []), stock || 0];
+        const query = `INSERT INTO products (id, name, price, offer_price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING *`;
+        const values = [finalId, name, price, offerPrice || null, category, rating || 5, reviews || 0, description, material, dimensions, origin, impact, JSON.stringify(details || []), JSON.stringify(story || {}), JSON.stringify(images || []), stock || 0];
         const { rows } = await pool.query(query, values);
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
@@ -93,9 +93,9 @@ app.post('/api/products', async (req, res) => {
 app.put('/api/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, price, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock } = req.body;
-        const query = `UPDATE products SET name=$1, price=$2, category=$3, rating=$4, reviews=$5, description=$6, material=$7, dimensions=$8, origin=$9, impact=$10, details=$11, story=$12, images=$13, stock=$14 WHERE id=$15 RETURNING *`;
-        const values = [name, price, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images), stock || 0, id];
+        const { name, price, offerPrice, category, rating, reviews, description, material, dimensions, origin, impact, details, story, images, stock } = req.body;
+        const query = `UPDATE products SET name=$1, price=$2, offer_price=$3, category=$4, rating=$5, reviews=$6, description=$7, material=$8, dimensions=$9, origin=$10, impact=$11, details=$12, story=$13, images=$14, stock=$15 WHERE id=$16 RETURNING *`;
+        const values = [name, price, offerPrice || null, category, rating, reviews, description, material, dimensions, origin, impact, JSON.stringify(details), JSON.stringify(story), JSON.stringify(images), stock || 0, id];
         const { rows } = await pool.query(query, values);
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }

@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS products (
     id VARCHAR(50) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
+    offer_price DECIMAL(10, 2),
     category VARCHAR(100),
     rating DECIMAL(2, 1),
     reviews INTEGER,
