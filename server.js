@@ -7,13 +7,21 @@ import { fileURLToPath } from 'url';
 import pool from './db.js';
 import fs from 'fs';
 
+
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'uploads'))); // Also serve without prefix as fallback
+
 
 // Setup Cloudinary storage
 import { v2 as cloudinary } from 'cloudinary';
@@ -212,8 +220,8 @@ app.get('/api/programs', async (req, res) => runQuery(res, 'SELECT * FROM progra
 
 app.post('/api/programs', async (req, res) => {
     try {
-        const { title, description, image, features } = req.body;
-        const { rows } = await pool.query('INSERT INTO programs (title, description, image, features) VALUES ($1, $2, $3, $4) RETURNING *', [title, description, image, JSON.stringify(features)]);
+        const { title, description, image, features, header, dropdown_title } = req.body;
+        const { rows } = await pool.query('INSERT INTO programs (title, description, image, features, header, dropdown_title) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [title, description, image, JSON.stringify(features), header, dropdown_title]);
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
@@ -221,9 +229,9 @@ app.post('/api/programs', async (req, res) => {
 app.put('/api/programs/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, description, image, features } = req.body;
+        const { title, description, image, features, header, dropdown_title } = req.body;
         // In some cases id is not in params but in body, being safe
-        const { rows } = await pool.query('UPDATE programs SET title=$1, description=$2, image=$3, features=$4 WHERE id=$5 RETURNING *', [title, description, image, JSON.stringify(features), id]);
+        const { rows } = await pool.query('UPDATE programs SET title=$1, description=$2, image=$3, features=$4, header=$5, dropdown_title=$6 WHERE id=$7 RETURNING *', [title, description, image, JSON.stringify(features), header, dropdown_title, id]);
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
 });

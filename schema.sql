@@ -51,7 +51,9 @@ CREATE TABLE IF NOT EXISTS programs (
     title VARCHAR(255),
     description TEXT,
     image TEXT,
-    features JSONB
+    features JSONB,
+    header VARCHAR(255),
+    dropdown_title VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS settings (

@@ -34,7 +34,9 @@ const init = async () => {
             try {
                 await pool.query('ALTER TABLE products ADD COLUMN IF NOT EXISTS stock INTEGER DEFAULT 0');
                 await pool.query('ALTER TABLE products ADD COLUMN IF NOT EXISTS offer_price DECIMAL(10, 2)');
-                console.log('✓ Applied migrations: Added stock and offer_price columns to products.');
+                await pool.query('ALTER TABLE programs ADD COLUMN IF NOT EXISTS header VARCHAR(255)');
+                await pool.query('ALTER TABLE programs ADD COLUMN IF NOT EXISTS dropdown_title VARCHAR(255)');
+                console.log('✓ Applied migrations for products and programs tables.');
             } catch (err) {
                 console.log('Migration note: ' + err.message);
             }
