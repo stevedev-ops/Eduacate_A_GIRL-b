@@ -380,6 +380,99 @@ app.delete('/api/wishlist/:id', async (req, res) => {
     }
 });
 
+// --- BLOG POSTS ---
+
+// Auto-create blog_posts table if it doesn't exist
+(async () => {
+    try {
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS blog_posts (
+                id SERIAL PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                slug VARCHAR(255) UNIQUE NOT NULL,
+                excerpt TEXT,
+                content TEXT,
+                cover_image TEXT,
+                author VARCHAR(255) DEFAULT 'EARG Team',
+                tags TEXT[],
+                published BOOLEAN DEFAULT FALSE,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        `);
+        console.log('blog_posts table ready');
+    } catch (err) {
+        console.error('Failed to create blog_posts table:', err.message);
+    }
+})();
+
+// GET all blog posts (admin gets all, public gets published only)
+app.get('/api/blog', async (req, res) => {
+    try {
+        const admin = req.query.admin === 'true';
+        const query = admin
+            ? 'SELECT * FROM blog_posts ORDER BY created_at DESC'
+            : "SELECT * FROM blog_posts WHERE published = TRUE ORDER BY created_at DESC";
+        const { rows } = await pool.query(query);
+        res.json(rows);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// GET single blog post by slug
+app.get('/api/blog/:slug', async (req, res) => {
+    try {
+        const { rows } = await pool.query('SELECT * FROM blog_posts WHERE slug = $1', [req.params.slug]);
+        if (rows.length === 0) return res.status(404).json({ error: 'Post not found' });
+        res.json(rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// POST create blog post
+app.post('/api/blog', async (req, res) => {
+    try {
+        const { title, slug, excerpt, content, cover_image, author, tags, published } = req.body;
+        const { rows } = await pool.query(
+            `INSERT INTO blog_posts (title, slug, excerpt, content, cover_image, author, tags, published)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
+            [title, slug, excerpt, content, cover_image, author || 'EARG Team', tags || [], published || false]
+        );
+        res.json(rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// PUT update blog post
+app.put('/api/blog/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title, slug, excerpt, content, cover_image, author, tags, published } = req.body;
+        const { rows } = await pool.query(
+            `UPDATE blog_posts SET title=$1, slug=$2, excerpt=$3, content=$4, cover_image=$5,
+             author=$6, tags=$7, published=$8, updated_at=NOW() WHERE id=$9 RETURNING *`,
+            [title, slug, excerpt, content, cover_image, author || 'EARG Team', tags || [], published || false, id]
+        );
+        if (rows.length === 0) return res.status(404).json({ error: 'Post not found' });
+        res.json(rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// DELETE blog post
+app.delete('/api/blog/:id', async (req, res) => {
+    try {
+        await pool.query('DELETE FROM blog_posts WHERE id = $1', [req.params.id]);
+        res.json({ message: 'Deleted' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
