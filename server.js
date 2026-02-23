@@ -37,7 +37,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'educate_a_girl',
-        allowed_formats: ['jpg', 'png', 'jpeg', 'webp']
+        allowedFormats: ['jpg', 'png', 'jpeg', 'webp']
         // We store the original high-quality image without incoming transformations
     }
 });
@@ -378,6 +378,49 @@ app.delete('/api/wishlist/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
+});
+
+// --- BLOG ---
+app.get('/api/blog', async (req, res) => {
+    runQuery(res, "SELECT * FROM blog_posts WHERE published = true ORDER BY published_at DESC");
+});
+
+app.get('/api/blog/all', async (req, res) => {
+    runQuery(res, "SELECT * FROM blog_posts ORDER BY published_at DESC");
+});
+
+app.get('/api/blog/:slug', async (req, res) => {
+    runQuerySingle(res, "SELECT * FROM blog_posts WHERE slug = $1 AND published = true", [req.params.slug]);
+});
+
+app.post('/api/blog', async (req, res) => {
+    try {
+        const { title, slug, excerpt, content, image, author, published } = req.body;
+        const { rows } = await pool.query(
+            'INSERT INTO blog_posts (title, slug, excerpt, content, image, author, published) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+            [title, slug, excerpt, content, image, author || 'EARG Team', published || false]
+        );
+        res.json(rows[0]);
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.put('/api/blog/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title, slug, excerpt, content, image, author, published } = req.body;
+        const { rows } = await pool.query(
+            'UPDATE blog_posts SET title=$1, slug=$2, excerpt=$3, content=$4, image=$5, author=$6, published=$7 WHERE id=$8 RETURNING *',
+            [title, slug, excerpt, content, image, author, published, id]
+        );
+        res.json(rows[0]);
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.delete('/api/blog/:id', async (req, res) => {
+    try {
+        await pool.query('DELETE FROM blog_posts WHERE id = $1', [req.params.id]);
+        res.json({ message: 'Deleted' });
+    } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
 app.listen(PORT, () => {

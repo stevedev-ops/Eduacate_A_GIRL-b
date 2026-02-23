@@ -1,0 +1,7 @@
+Initializing database...
+✓ Tables created or already exist.
+✓ Applied migrations for products and programs tables.
+✓ blog_posts table ready.
+✓ Database already has 15 products. Skipping seed.
+Server running on port 3001
+Cloudinary Upload Error: { message: 'Invalid image file', name: 'Error', http_code: 400 }
