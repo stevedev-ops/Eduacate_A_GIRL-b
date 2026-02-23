@@ -41,6 +41,26 @@ const init = async () => {
                 console.log('Migration note: ' + err.message);
             }
 
+            // Create blog_posts table if it doesn't exist
+            try {
+                await pool.query(`
+                    CREATE TABLE IF NOT EXISTS blog_posts (
+                        id SERIAL PRIMARY KEY,
+                        title TEXT NOT NULL,
+                        slug TEXT UNIQUE NOT NULL,
+                        excerpt TEXT,
+                        content TEXT,
+                        image TEXT,
+                        author TEXT DEFAULT 'EARG Team',
+                        published BOOLEAN DEFAULT false,
+                        published_at TIMESTAMPTZ DEFAULT NOW()
+                    )
+                `);
+                console.log('✓ blog_posts table ready.');
+            } catch (err) {
+                console.log('Blog table note: ' + err.message);
+            }
+
             // Check if data already exists
             const { rows } = await pool.query('SELECT COUNT(*) FROM products');
             const productCount = parseInt(rows[0].count);
