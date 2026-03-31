@@ -21,7 +21,7 @@ const parseJson = (data) => {
     return data;
 };
 
-const sendOrderConfirmation = async (order) => {
+export const sendOrderConfirmation = async (order) => {
     if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
         console.warn("SMTP credentials not provided. Order confirmation email bypassed.");
         return false;
@@ -96,7 +96,7 @@ const sendOrderConfirmation = async (order) => {
     }
 };
 
-const sendAdminNotification = async (order) => {
+export const sendAdminNotification = async (order) => {
     if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) return false;
     const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_EMAIL;
 
@@ -135,7 +135,3 @@ const sendAdminNotification = async (order) => {
     }
 };
 
-module.exports = {
-    sendOrderConfirmation,
-    sendAdminNotification
-};
