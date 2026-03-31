@@ -215,6 +215,39 @@ app.delete('/api/journey/:id', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+// --- PARTNERS ---
+app.get('/api/partners', async (req, res) => runQuery(res, 'SELECT * FROM partners ORDER BY sort_order ASC, id ASC'));
+
+app.post('/api/partners', async (req, res) => {
+    try {
+        const { name, logo, website, description, sort_order } = req.body;
+        const { rows } = await pool.query(
+            'INSERT INTO partners (name, logo, website, description, sort_order) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [name, logo, website || '', description || '', Number.isFinite(Number(sort_order)) ? Number(sort_order) : 0]
+        );
+        res.json(rows[0]);
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.put('/api/partners/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, logo, website, description, sort_order } = req.body;
+        const { rows } = await pool.query(
+            'UPDATE partners SET name=$1, logo=$2, website=$3, description=$4, sort_order=$5 WHERE id=$6 RETURNING *',
+            [name, logo, website || '', description || '', Number.isFinite(Number(sort_order)) ? Number(sort_order) : 0, id]
+        );
+        res.json(rows[0]);
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.delete('/api/partners/:id', async (req, res) => {
+    try {
+        await pool.query('DELETE FROM partners WHERE id = $1', [req.params.id]);
+        res.json({ message: 'Deleted' });
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 // --- PROGRAMS ---
 app.get('/api/programs', async (req, res) => runQuery(res, 'SELECT * FROM programs ORDER BY id'));
 
@@ -326,11 +359,22 @@ app.post('/api/checkout', async (req, res) => {
     res.json({ success: true, message: 'Payment processed successfully' });
 });
 
+const { sendOrderConfirmation, sendAdminNotification } = require('./emailService');
+
 app.post('/api/orders', async (req, res) => {
     try {
         const { items, total, customerInfo } = req.body;
         const { rows } = await pool.query('INSERT INTO orders (items, total, customer_info) VALUES ($1, $2, $3) RETURNING *', [JSON.stringify(items), total, JSON.stringify(customerInfo)]);
-        res.status(201).json(rows[0]);
+        
+        const order = rows[0];
+        
+        // Asynchronously send emails so as not to block the HTTP response
+        Promise.all([
+            sendOrderConfirmation(order),
+            sendAdminNotification(order)
+        ]).catch(e => console.error("Error triggering order emails:", e));
+
+        res.status(201).json(order);
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 

@@ -56,6 +56,15 @@ CREATE TABLE IF NOT EXISTS programs (
     dropdown_title VARCHAR(255)
 );
 
+CREATE TABLE IF NOT EXISTS partners (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    logo TEXT NOT NULL,
+    website TEXT,
+    description TEXT,
+    sort_order INTEGER DEFAULT 0
+);
+
 CREATE TABLE IF NOT EXISTS settings (
     key VARCHAR(50) PRIMARY KEY,
     value JSONB

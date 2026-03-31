@@ -2,6 +2,7 @@ export const gallery = [];
 export const stories = [];
 export const team = [];
 export const journey = [];
+export const partners = [];
 export const programs = [
     {
         id: 1,
