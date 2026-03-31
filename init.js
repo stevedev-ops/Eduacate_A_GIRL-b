@@ -36,7 +36,7 @@ const runStartupMigrations = async () => {
                     sort_order INTEGER DEFAULT 0
                 )
             `
-        }
+        },
     ];
 
     for (const migration of migrations) {
@@ -69,9 +69,6 @@ const init = async () => {
             await pool.query(schema);
             console.log('✓ Tables created or already exist.');
 
-            // Apply startup migrations in sequence so new schema updates run after older ones.
-            await runStartupMigrations();
-
             // Create blog_posts table if it doesn't exist
             try {
                 await pool.query(`
@@ -83,6 +80,10 @@ const init = async () => {
                         content TEXT,
                         image TEXT,
                         author TEXT DEFAULT 'EARG Team',
+                        category TEXT,
+                        tags JSONB DEFAULT '[]'::jsonb,
+                        featured BOOLEAN DEFAULT false,
+                        content_blocks JSONB DEFAULT '[]'::jsonb,
                         published BOOLEAN DEFAULT false,
                         published_at TIMESTAMPTZ DEFAULT NOW()
                     )
@@ -91,6 +92,14 @@ const init = async () => {
             } catch (err) {
                 console.log('Blog table note: ' + err.message);
             }
+
+            // Apply startup migrations in sequence so new schema updates run after older ones.
+            await runStartupMigrations();
+            await pool.query('ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS category TEXT');
+            await pool.query('ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS tags JSONB DEFAULT \'[]\'::jsonb');
+            await pool.query('ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS featured BOOLEAN DEFAULT false');
+            await pool.query('ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS content_blocks JSONB DEFAULT \'[]\'::jsonb');
+            console.log('✓ Blog post migrations complete.');
 
             // Check if data already exists
             const { rows } = await pool.query('SELECT COUNT(*) FROM products');

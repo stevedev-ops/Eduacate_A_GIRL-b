@@ -439,10 +439,22 @@ app.get('/api/blog/:slug', async (req, res) => {
 
 app.post('/api/blog', async (req, res) => {
     try {
-        const { title, slug, excerpt, content, image, author, published } = req.body;
+        const { title, slug, excerpt, content, image, author, category, tags, featured, content_blocks, published } = req.body;
         const { rows } = await pool.query(
-            'INSERT INTO blog_posts (title, slug, excerpt, content, image, author, published) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
-            [title, slug, excerpt, content, image, author || 'EARG Team', published || false]
+            'INSERT INTO blog_posts (title, slug, excerpt, content, image, author, category, tags, featured, content_blocks, published) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *',
+            [
+                title,
+                slug,
+                excerpt,
+                content,
+                image,
+                author || 'EARG Team',
+                category || '',
+                JSON.stringify(Array.isArray(tags) ? tags : []),
+                !!featured,
+                JSON.stringify(Array.isArray(content_blocks) ? content_blocks : []),
+                published || false
+            ]
         );
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
@@ -451,10 +463,23 @@ app.post('/api/blog', async (req, res) => {
 app.put('/api/blog/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, slug, excerpt, content, image, author, published } = req.body;
+        const { title, slug, excerpt, content, image, author, category, tags, featured, content_blocks, published } = req.body;
         const { rows } = await pool.query(
-            'UPDATE blog_posts SET title=$1, slug=$2, excerpt=$3, content=$4, image=$5, author=$6, published=$7 WHERE id=$8 RETURNING *',
-            [title, slug, excerpt, content, image, author, published, id]
+            'UPDATE blog_posts SET title=$1, slug=$2, excerpt=$3, content=$4, image=$5, author=$6, category=$7, tags=$8, featured=$9, content_blocks=$10, published=$11 WHERE id=$12 RETURNING *',
+            [
+                title,
+                slug,
+                excerpt,
+                content,
+                image,
+                author,
+                category || '',
+                JSON.stringify(Array.isArray(tags) ? tags : []),
+                !!featured,
+                JSON.stringify(Array.isArray(content_blocks) ? content_blocks : []),
+                published,
+                id
+            ]
         );
         res.json(rows[0]);
     } catch (err) { res.status(500).json({ error: err.message }); }
