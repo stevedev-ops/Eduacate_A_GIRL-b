@@ -359,15 +359,15 @@ app.post('/api/checkout', async (req, res) => {
     res.json({ success: true, message: 'Payment processed successfully' });
 });
 
-const { sendOrderConfirmation, sendAdminNotification } = require('./emailService');
+import { sendOrderConfirmation, sendAdminNotification } from './emailService.js';
 
 app.post('/api/orders', async (req, res) => {
     try {
         const { items, total, customerInfo } = req.body;
         const { rows } = await pool.query('INSERT INTO orders (items, total, customer_info) VALUES ($1, $2, $3) RETURNING *', [JSON.stringify(items), total, JSON.stringify(customerInfo)]);
-        
+
         const order = rows[0];
-        
+
         // Asynchronously send emails so as not to block the HTTP response
         Promise.all([
             sendOrderConfirmation(order),
