@@ -1,10 +1,49 @@
 import fs from 'fs';
 import pool from './db.js';
-import { gallery, stories, team, journey, programs, settings } from './data.js';
+import { gallery, stories, team, journey, partners, programs, settings } from './data.js';
 
 // Global lock to prevent multiple simultaneous initializations
 let isInitializing = false;
 let initPromise = null;
+
+const runStartupMigrations = async () => {
+    const migrations = [
+        {
+            name: 'products.stock',
+            query: 'ALTER TABLE products ADD COLUMN IF NOT EXISTS stock INTEGER DEFAULT 0'
+        },
+        {
+            name: 'products.offer_price',
+            query: 'ALTER TABLE products ADD COLUMN IF NOT EXISTS offer_price DECIMAL(10, 2)'
+        },
+        {
+            name: 'programs.header',
+            query: 'ALTER TABLE programs ADD COLUMN IF NOT EXISTS header VARCHAR(255)'
+        },
+        {
+            name: 'programs.dropdown_title',
+            query: 'ALTER TABLE programs ADD COLUMN IF NOT EXISTS dropdown_title VARCHAR(255)'
+        },
+        {
+            name: 'partners.table',
+            query: `
+                CREATE TABLE IF NOT EXISTS partners (
+                    id SERIAL PRIMARY KEY,
+                    name VARCHAR(255) NOT NULL,
+                    logo TEXT NOT NULL,
+                    website TEXT,
+                    description TEXT,
+                    sort_order INTEGER DEFAULT 0
+                )
+            `
+        }
+    ];
+
+    for (const migration of migrations) {
+        await pool.query(migration.query);
+        console.log(`✓ Migration complete: ${migration.name}`);
+    }
+};
 
 const init = async () => {
     // If already initializing, wait for that to complete
@@ -30,16 +69,8 @@ const init = async () => {
             await pool.query(schema);
             console.log('✓ Tables created or already exist.');
 
-            // Apply migrations for existing tables (in case of updates)
-            try {
-                await pool.query('ALTER TABLE products ADD COLUMN IF NOT EXISTS stock INTEGER DEFAULT 0');
-                await pool.query('ALTER TABLE products ADD COLUMN IF NOT EXISTS offer_price DECIMAL(10, 2)');
-                await pool.query('ALTER TABLE programs ADD COLUMN IF NOT EXISTS header VARCHAR(255)');
-                await pool.query('ALTER TABLE programs ADD COLUMN IF NOT EXISTS dropdown_title VARCHAR(255)');
-                console.log('✓ Applied migrations for products and programs tables.');
-            } catch (err) {
-                console.log('Migration note: ' + err.message);
-            }
+            // Apply startup migrations in sequence so new schema updates run after older ones.
+            await runStartupMigrations();
 
             // Create blog_posts table if it doesn't exist
             try {
@@ -96,6 +127,15 @@ const init = async () => {
                 await pool.query('INSERT INTO journey (year, title, description) VALUES ($1, $2, $3)', [item.year, item.title, item.description]);
             }
             console.log('✓ Journey seeded.');
+
+            // Insert partners
+            for (const item of partners) {
+                await pool.query(
+                    'INSERT INTO partners (name, logo, website, description, sort_order) VALUES ($1, $2, $3, $4, $5)',
+                    [item.name, item.logo, item.website || '', item.description || '', item.sort_order || 0]
+                );
+            }
+            console.log('✓ Partners seeded.');
 
             // Insert programs
             for (const item of programs) {

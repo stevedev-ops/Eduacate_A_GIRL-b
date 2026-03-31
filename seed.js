@@ -1,7 +1,7 @@
 import fs from 'fs';
 import pool from './db.js';
 import { products } from '../src/data/products.js';
-import { gallery, stories, team, journey, programs, settings } from './data.js';
+import { gallery, stories, team, journey, partners, programs, settings } from './data.js';
 
 const seed = async () => {
     const schema = fs.readFileSync('./schema.sql', 'utf8');
@@ -12,7 +12,7 @@ const seed = async () => {
         console.log('Tables created or already exist.');
 
         // Clear existing data
-        await pool.query('TRUNCATE TABLE products, gallery, stories, team, journey, programs, settings, messages, reviews, orders RESTART IDENTITY');
+        await pool.query('TRUNCATE TABLE products, gallery, stories, team, journey, partners, programs, settings, messages, reviews, orders RESTART IDENTITY');
 
         // Insert products
         for (const product of products) {
@@ -56,6 +56,15 @@ const seed = async () => {
             await pool.query('INSERT INTO journey (year, title, description) VALUES ($1, $2, $3)', [item.year, item.title, item.description]);
         }
         console.log('Journey seeded.');
+
+        // Insert partners
+        for (const item of partners) {
+            await pool.query(
+                'INSERT INTO partners (name, logo, website, description, sort_order) VALUES ($1, $2, $3, $4, $5)',
+                [item.name, item.logo, item.website || '', item.description || '', item.sort_order || 0]
+            );
+        }
+        console.log('Partners seeded.');
 
         // Insert programs
         for (const item of programs) {
